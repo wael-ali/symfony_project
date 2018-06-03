@@ -7,3 +7,9 @@ hello_page:
   controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
   defaults:
     template: hello.html.twig
+
+# welcome:
+#   path: /welcome
+#   controller:   Symfony\Bundle\FrameworkBundle\Controller\WelcomeController::index
+#   defaults:
+#     template: hello.html.twig
