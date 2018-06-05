@@ -18,4 +18,12 @@ class WelcomeController extends Controller
 
         // return $this->render(view: 'welcome/index.html.twig');
     }
+
+    /**
+     * @Route("/hello_page", name="hello_page")
+     */
+    public function hello()
+    {
+        return $this->render('welcome/hello_page.html.twig', ['controller_name' => 'WelcomeController',]);
+    }
 }
