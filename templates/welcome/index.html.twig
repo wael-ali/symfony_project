@@ -1,8 +1,12 @@
 {%extends 'base.html.twig'%}
-{% block title%}Welcome Page{% endblock title%}
+{% block title%}Welcome {{ app.request.query.get('name') | default ('there') }}!{% endblock title%}
 {% block main%}
   <h3>Our Welcome page</h3>
+  <pre>
+    {{ dump() }}
+  </pre>
   <p>
-    lets know abut your wishs
+    <h4> Hallo {{ app.request.query.get('name') | default ('there') }}!</h4>
+    lets know abut your wishs.
   </p>
 {% endblock main%}
