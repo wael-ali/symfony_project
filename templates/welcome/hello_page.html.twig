@@ -1,6 +1,11 @@
 {% extends 'base.html.twig'%}
 
-{%block title%}Hello page{%endblock%}
-{%block main%}
+{% block title%}Hello page{% endblock %}
+{% block main%}
   <h3>This is the Hello page form the welcome controller</h3>
-{%endblock main%}
+  <h4>Hallo {{ name }}!</h4>
+
+  My lovely variable: {{ some_variable | default('the variable was not set') }}
+
+{% endblock main %}
+ 

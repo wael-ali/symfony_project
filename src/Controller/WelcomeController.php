@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class WelcomeController extends Controller
 {
@@ -20,10 +21,24 @@ class WelcomeController extends Controller
     }
 
     /**
-     * @Route("/hello_page", name="hello_page")
+     * @Route(
+     *       "/hello_page/{name}",
+     *      name="hello_page",
+     *     defaults={"name" = "you there"},
+     *      requirements={"name" = "[A-Za-z]+"}
+     *  )
+     * @return \Symfony\Components\HttpFoundation\Response
      */
-    public function hello()
+    public function hello($name)
     {
-        return $this->render('welcome/hello_page.html.twig', ['controller_name' => 'WelcomeController',]);
+        
+        return $this->render(
+            'welcome/hello_page.html.twig',
+            [
+                'controller_name' => 'WelcomeController',
+                'some_variable' => 'any thing',
+                'name' => $name
+            ]
+        );
     }
 }
