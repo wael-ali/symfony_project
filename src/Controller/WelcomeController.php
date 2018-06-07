@@ -23,9 +23,9 @@ class WelcomeController extends Controller
     /**
      * @Route(
      *       "/hello_page/{name}",
-     *      name="hello_page",
-     *     defaults={"name" = "you there"},
-     *      requirements={"name" = "[A-Za-z]+"}
+     *       name="hello_page",
+     *       defaults={"name" = "you there"},
+     *       requirements={"name" = "[A-Za-z]+"}
      *  )
      * @return \Symfony\Components\HttpFoundation\Response
      */
